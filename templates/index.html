@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpamShield - Email Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="icon">
+                🛡️
+            </div>
+
+            <div>
+                <h1>SpamShield</h1>
+                <p>AI-Powered Email Spam Detection</p>
+            </div>
+
+        </div>
+
+
+        <div class="content">
+
+            <h2>Check Your Email</h2>
+
+            <p class="description">
+                Enter an email subject and message to find out
+                whether it is spam or legitimate.
+            </p>
+
+
+            <label>Email Subject</label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Enter email subject..."
+            >
+
+
+            <label>Email Message</label>
+
+            <textarea
+                id="body"
+                placeholder="Paste your email message here..."
+            ></textarea>
+
+
+            <button onclick="checkEmail()">
+
+                🔍 Check Email
+
+            </button>
+
+
+            <div id="result" class="result hidden">
+
+                <div id="resultIcon" class="resultIcon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h2 id="resultTitle">
+                        NOT SPAM
+                    </h2>
+
+                    <p id="resultDescription">
+                        This email appears to be legitimate.
+                    </p>
+
+                    <p class="confidence">
+                        Confidence:
+                        <strong id="confidence">
+                            0%
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="error" class="error hidden"></div>
+
+        </div>
+
+
+        <div class="footer">
+
+            <p>
+                Machine Learning • TF-IDF • Naive Bayes
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
